@@ -30,6 +30,7 @@
         {
             label1 = new Label();
             btn1 = new Button();
+            checkBox1 = new CheckBox();
             SuspendLayout();
             // 
             // label1
@@ -40,6 +41,7 @@
             label1.Size = new Size(238, 15);
             label1.TabIndex = 0;
             label1.Text = "PHẦN MỀM QUẢN LÍ NHÂN SỰ HÃNG TAXI";
+            label1.Click += label1_Click;
             // 
             // btn1
             // 
@@ -51,11 +53,22 @@
             btn1.UseVisualStyleBackColor = true;
             btn1.Click += btn1_Click;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(218, 239);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(70, 19);
+            checkBox1.TabIndex = 2;
+            checkBox1.Text = "Chạy ổn";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(checkBox1);
             Controls.Add(btn1);
             Controls.Add(label1);
             Name = "Form1";
@@ -68,5 +81,6 @@
 
         private Label label1;
         private Button btn1;
+        private CheckBox checkBox1;
     }
 }
