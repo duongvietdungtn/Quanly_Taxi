@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "T:\\Code\\C#\\QuanLy_Taxi\\QuanLy_Taxi\\QuanLy_Taxi.csproj": {}
+    "F:\\C#\\Quanly_Taxi\\QuanLy_Taxi\\QuanLy_Taxi.csproj": {}
   },
   "projects": {
-    "T:\\Code\\C#\\QuanLy_Taxi\\QuanLy_Taxi\\QuanLy_Taxi.csproj": {
+    "F:\\C#\\Quanly_Taxi\\QuanLy_Taxi\\QuanLy_Taxi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "T:\\Code\\C#\\QuanLy_Taxi\\QuanLy_Taxi\\QuanLy_Taxi.csproj",
+        "projectUniqueName": "F:\\C#\\Quanly_Taxi\\QuanLy_Taxi\\QuanLy_Taxi.csproj",
         "projectName": "QuanLy_Taxi",
-        "projectPath": "T:\\Code\\C#\\QuanLy_Taxi\\QuanLy_Taxi\\QuanLy_Taxi.csproj",
+        "projectPath": "F:\\C#\\Quanly_Taxi\\QuanLy_Taxi\\QuanLy_Taxi.csproj",
         "packagesPath": "C:\\Users\\Dugdug\\.nuget\\packages\\",
-        "outputPath": "T:\\Code\\C#\\QuanLy_Taxi\\QuanLy_Taxi\\obj\\",
+        "outputPath": "F:\\C#\\Quanly_Taxi\\QuanLy_Taxi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

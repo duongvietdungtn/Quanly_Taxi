@@ -58,9 +58,9 @@
             checkBox1.AutoSize = true;
             checkBox1.Location = new Point(218, 239);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(70, 19);
+            checkBox1.Size = new Size(97, 19);
             checkBox1.TabIndex = 2;
-            checkBox1.Text = "Chạy ổn";
+            checkBox1.Text = "Chạy ổn 1234";
             checkBox1.UseVisualStyleBackColor = true;
             // 
             // Form1
