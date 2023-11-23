@@ -6,5 +6,10 @@ namespace QuanLy_Taxi
         {
             InitializeComponent();
         }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

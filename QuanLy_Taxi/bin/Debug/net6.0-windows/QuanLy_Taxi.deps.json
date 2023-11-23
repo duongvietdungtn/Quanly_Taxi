@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "QuanLy_Taxi/1.0.0": {
+        "runtime": {
+          "QuanLy_Taxi.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "QuanLy_Taxi/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

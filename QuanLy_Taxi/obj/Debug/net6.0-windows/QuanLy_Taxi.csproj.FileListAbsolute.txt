@@ -1,0 +1,16 @@
+F:\C#\Quanly_Taxi\QuanLy_Taxi\bin\Debug\net6.0-windows\QuanLy_Taxi.exe
+F:\C#\Quanly_Taxi\QuanLy_Taxi\bin\Debug\net6.0-windows\QuanLy_Taxi.deps.json
+F:\C#\Quanly_Taxi\QuanLy_Taxi\bin\Debug\net6.0-windows\QuanLy_Taxi.runtimeconfig.json
+F:\C#\Quanly_Taxi\QuanLy_Taxi\bin\Debug\net6.0-windows\QuanLy_Taxi.dll
+F:\C#\Quanly_Taxi\QuanLy_Taxi\bin\Debug\net6.0-windows\QuanLy_Taxi.pdb
+F:\C#\Quanly_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.Form1.resources
+F:\C#\Quanly_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.csproj.GenerateResource.cache
+F:\C#\Quanly_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.GeneratedMSBuildEditorConfig.editorconfig
+F:\C#\Quanly_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.AssemblyInfoInputs.cache
+F:\C#\Quanly_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.AssemblyInfo.cs
+F:\C#\Quanly_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.csproj.CoreCompileInputs.cache
+F:\C#\Quanly_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.dll
+F:\C#\Quanly_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\refint\QuanLy_Taxi.dll
+F:\C#\Quanly_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.pdb
+F:\C#\Quanly_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.genruntimeconfig.cache
+F:\C#\Quanly_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\ref\QuanLy_Taxi.dll
