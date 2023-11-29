@@ -6,5 +6,10 @@ namespace QuanLy_Taxi
         {
             InitializeComponent();
         }
+
+        private void panel_menu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

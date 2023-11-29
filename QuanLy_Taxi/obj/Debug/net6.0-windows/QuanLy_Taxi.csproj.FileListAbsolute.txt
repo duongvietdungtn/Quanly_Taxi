@@ -30,3 +30,9 @@ T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\refint\QuanLy_Taxi.d
 T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.pdb
 T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.genruntimeconfig.cache
 T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\ref\QuanLy_Taxi.dll
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.Properties.Resources.resources
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\bin\Debug\net6.0-windows\Guna.UI2.dll
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\bin\Debug\net6.0-windows\System.Management.dll
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.csproj.AssemblyReference.cache
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.csproj.CopyComplete

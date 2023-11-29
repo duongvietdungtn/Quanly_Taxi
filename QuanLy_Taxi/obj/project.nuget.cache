@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "8cg+c2CDrJ77gcemPYXSEkPqR2Qiec4rdFszA9ht/fRxO+VdV9J8z4WrrcfyV78fEo+lqzEyWJEGwXk1YZsVNA==",
+  "dgSpecHash": "088yAX9o7wracHNYOtRkjeeOVWzn3kPWbluTSl44hm5NlovV6lQdgshhb0l8piB27xHs/P70Mlv+fMUSExmqqw==",
   "success": true,
   "projectFilePath": "T:\\Code\\C#\\QuanLy_Taxi\\QuanLy_Taxi\\QuanLy_Taxi.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Dugdug\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.6\\guna.ui2.winforms.2.0.4.6.nupkg.sha512",
+    "C:\\Users\\Dugdug\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
+    "C:\\Users\\Dugdug\\.nuget\\packages\\system.management\\6.0.0\\system.management.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
