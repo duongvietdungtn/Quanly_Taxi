@@ -36,3 +36,4 @@ T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\bin\Debug\net6.0-windows\System.Management.dl
 T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll
 T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.csproj.AssemblyReference.cache
 T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.csproj.CopyComplete
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.trangchu.resources
