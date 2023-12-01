@@ -24,11 +24,6 @@
         }
 
 
-        private void btn_trangchu_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new trangchu());
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             //label_datetime.Text = DateTime.Now.ToLongTimeString();
@@ -53,6 +48,25 @@
             btn_qlcdi.Checked = false;
             btn_qltkhoan.Checked = false;
             btn_thongke.Checked = false;
+        }
+        private void btn_trangchu_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new trangchu());
+        }
+
+        private void btn_qltxe_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new QLyTaixe());
+        }
+
+        private void btn_qlluong_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new QlyLuong());
+        }
+
+        private void btn_qlxe_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new QLyXe());
         }
     }
 }

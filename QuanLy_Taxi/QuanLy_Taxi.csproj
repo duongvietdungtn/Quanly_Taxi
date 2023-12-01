@@ -18,6 +18,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="QLTX_sua_dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="QLTX_chitiet_dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="QLXe_chitiet_dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="QLXe_sua_dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="QLXe_them_dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

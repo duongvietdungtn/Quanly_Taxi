@@ -37,3 +37,12 @@ T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\bin\Debug\net6.0-windows\runtimes\win\lib\net
 T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.csproj.AssemblyReference.cache
 T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.csproj.CopyComplete
 T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.trangchu.resources
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.QLyTaixe.resources
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.QlyLuong.resources
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.QLyXe.resources
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.QLTX_them_dialog.resources
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.QLTX_sua_dialog.resources
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.QLTX_chitiet_dialog.resources
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.QLXe_them_dialog.resources
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.QLXe_chitiet_dialog.resources
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.QLXe_sua_dialog.resources
