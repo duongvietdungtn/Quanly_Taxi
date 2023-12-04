@@ -16,5 +16,23 @@ namespace QuanLy_Taxi
         {
             InitializeComponent();
         }
+
+        private void btn_luong_them_Click(object sender, EventArgs e)
+        {
+            QLLuong_them_dialog b1 = new QLLuong_them_dialog();
+            b1.ShowDialog();
+        }
+
+        private void btn_luong_sua_Click(object sender, EventArgs e)
+        {
+            QLLuong_sua_dialog b2 = new QLLuong_sua_dialog();
+            b2.ShowDialog();
+        }
+
+        private void btn_luong_chitiet_Click(object sender, EventArgs e)
+        {
+            QLLuong_chitiet_dialog b3 = new QLLuong_chitiet_dialog();
+            b3.ShowDialog();
+        }
     }
 }

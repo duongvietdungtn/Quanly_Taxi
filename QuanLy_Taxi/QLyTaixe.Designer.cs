@@ -36,12 +36,18 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
-            listView1 = new ListView();
             btn_txe_them = new Guna.UI2.WinForms.Guna2Button();
             btn_txe_sua = new Guna.UI2.WinForms.Guna2Button();
             btn_txe_xoa = new Guna.UI2.WinForms.Guna2Button();
             btn_txe_chitiet = new Guna.UI2.WinForms.Guna2Button();
+            tb_searchtxe = new Guna.UI2.WinForms.Guna2TextBox();
+            dtgrid_QLTxe = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dtgrid_QLTxe).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -55,15 +61,6 @@
             label1.TabIndex = 0;
             label1.Text = "THÔNG TIN TÀI XẾ";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // listView1
-            // 
-            listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            listView1.Location = new Point(24, 230);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(940, 492);
-            listView1.TabIndex = 1;
-            listView1.UseCompatibleStateImageBehavior = false;
             // 
             // btn_txe_them
             // 
@@ -120,6 +117,7 @@
             btn_txe_xoa.Size = new Size(88, 45);
             btn_txe_xoa.TabIndex = 2;
             btn_txe_xoa.Text = "Xóa";
+            btn_txe_xoa.Click += btn_txe_xoa_Click;
             // 
             // btn_txe_chitiet
             // 
@@ -140,21 +138,78 @@
             btn_txe_chitiet.Text = "Chi tiết";
             btn_txe_chitiet.Click += btn_txe_chitiet_Click;
             // 
+            // tb_searchtxe
+            // 
+            tb_searchtxe.CustomizableEdges = customizableEdges9;
+            tb_searchtxe.DefaultText = "";
+            tb_searchtxe.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tb_searchtxe.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tb_searchtxe.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tb_searchtxe.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_searchtxe.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_searchtxe.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            tb_searchtxe.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_searchtxe.Location = new Point(572, 168);
+            tb_searchtxe.Name = "tb_searchtxe";
+            tb_searchtxe.PasswordChar = '\0';
+            tb_searchtxe.PlaceholderText = "";
+            tb_searchtxe.SelectedText = "";
+            tb_searchtxe.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            tb_searchtxe.Size = new Size(200, 36);
+            tb_searchtxe.TabIndex = 4;
+            tb_searchtxe.TextChanged += tb_searchtxe_TextChanged;
+            // 
+            // dtgrid_QLTxe
+            // 
+            dtgrid_QLTxe.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dtgrid_QLTxe.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgrid_QLTxe.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dtgrid_QLTxe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dtgrid_QLTxe.ColumnHeadersHeight = 30;
+            dtgrid_QLTxe.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dtgrid_QLTxe.DefaultCellStyle = dataGridViewCellStyle2;
+            dtgrid_QLTxe.Location = new Point(24, 230);
+            dtgrid_QLTxe.MultiSelect = false;
+            dtgrid_QLTxe.Name = "dtgrid_QLTxe";
+            dtgrid_QLTxe.ReadOnly = true;
+            dtgrid_QLTxe.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dtgrid_QLTxe.RowTemplate.Height = 25;
+            dtgrid_QLTxe.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgrid_QLTxe.Size = new Size(940, 492);
+            dtgrid_QLTxe.TabIndex = 3;
+            // 
             // QLyTaixe
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(989, 745);
+            Controls.Add(dtgrid_QLTxe);
+            Controls.Add(tb_searchtxe);
             Controls.Add(btn_txe_chitiet);
             Controls.Add(btn_txe_xoa);
             Controls.Add(btn_txe_sua);
             Controls.Add(btn_txe_them);
-            Controls.Add(listView1);
             Controls.Add(label1);
             Name = "QLyTaixe";
             StartPosition = FormStartPosition.Manual;
             Text = "QLyTaixe";
+            Load += QLyTaixe_Load;
+            ((System.ComponentModel.ISupportInitialize)dtgrid_QLTxe).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -162,10 +217,12 @@
         #endregion
 
         private Label label1;
-        private ListView listView1;
         private Guna.UI2.WinForms.Guna2Button btn_txe_them;
         private Guna.UI2.WinForms.Guna2Button btn_txe_sua;
         private Guna.UI2.WinForms.Guna2Button btn_txe_xoa;
         private Guna.UI2.WinForms.Guna2Button btn_txe_chitiet;
+        private DataGridViewTextBoxColumn Manv;
+        private Guna.UI2.WinForms.Guna2TextBox tb_searchtxe;
+        private DataGridView dtgrid_QLTxe;
     }
 }

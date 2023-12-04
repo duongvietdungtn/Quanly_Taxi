@@ -46,6 +46,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             label2 = new Label();
             tb_matx = new Guna.UI2.WinForms.Guna2TextBox();
@@ -64,7 +66,9 @@
             tb_maxe = new Guna.UI2.WinForms.Guna2TextBox();
             openFileDialog1 = new OpenFileDialog();
             pbx_anhtx = new PictureBox();
-            guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            dtpk_ngaysinh = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            cbb_gioitinh = new Guna.UI2.WinForms.Guna2ComboBox();
+            label9 = new Label();
             ((System.ComponentModel.ISupportInitialize)pbx_anhtx).BeginInit();
             SuspendLayout();
             // 
@@ -140,7 +144,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(578, 210);
+            label5.Location = new Point(641, 209);
             label5.Name = "label5";
             label5.RightToLeft = RightToLeft.No;
             label5.Size = new Size(71, 25);
@@ -197,6 +201,7 @@
             btn_luu.Size = new Size(108, 45);
             btn_luu.TabIndex = 4;
             btn_luu.Text = "Lưu lại";
+            btn_luu.Click += btn_luu_Click;
             // 
             // btn_thoat
             // 
@@ -271,7 +276,7 @@
             tb_dchi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_dchi.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Regular, GraphicsUnit.Point);
             tb_dchi.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_dchi.Location = new Point(578, 238);
+            tb_dchi.Location = new Point(641, 238);
             tb_dchi.Margin = new Padding(4, 4, 4, 4);
             tb_dchi.Name = "tb_dchi";
             tb_dchi.PasswordChar = '\0';
@@ -279,7 +284,7 @@
             tb_dchi.RightToLeft = RightToLeft.No;
             tb_dchi.SelectedText = "";
             tb_dchi.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            tb_dchi.Size = new Size(242, 46);
+            tb_dchi.Size = new Size(179, 36);
             tb_dchi.TabIndex = 2;
             // 
             // tb_sdt
@@ -342,31 +347,62 @@
             pbx_anhtx.TabIndex = 6;
             pbx_anhtx.TabStop = false;
             // 
-            // guna2DateTimePicker1
+            // dtpk_ngaysinh
             // 
-            guna2DateTimePicker1.BorderRadius = 5;
-            guna2DateTimePicker1.Checked = true;
-            guna2DateTimePicker1.CustomFormat = "  dd-MM-yyyy";
-            guna2DateTimePicker1.CustomizableEdges = customizableEdges17;
-            guna2DateTimePicker1.FillColor = Color.White;
-            guna2DateTimePicker1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2DateTimePicker1.Format = DateTimePickerFormat.Custom;
-            guna2DateTimePicker1.Location = new Point(282, 238);
-            guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            guna2DateTimePicker1.RightToLeft = RightToLeft.No;
-            guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            guna2DateTimePicker1.Size = new Size(251, 46);
-            guna2DateTimePicker1.TabIndex = 7;
-            guna2DateTimePicker1.Value = new DateTime(2023, 12, 1, 12, 53, 45, 509);
+            dtpk_ngaysinh.BorderRadius = 5;
+            dtpk_ngaysinh.Checked = true;
+            dtpk_ngaysinh.CustomFormat = "  dd-MM-yyyy";
+            dtpk_ngaysinh.CustomizableEdges = customizableEdges17;
+            dtpk_ngaysinh.FillColor = Color.White;
+            dtpk_ngaysinh.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpk_ngaysinh.Format = DateTimePickerFormat.Custom;
+            dtpk_ngaysinh.Location = new Point(282, 238);
+            dtpk_ngaysinh.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            dtpk_ngaysinh.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            dtpk_ngaysinh.Name = "dtpk_ngaysinh";
+            dtpk_ngaysinh.RightToLeft = RightToLeft.No;
+            dtpk_ngaysinh.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            dtpk_ngaysinh.Size = new Size(174, 36);
+            dtpk_ngaysinh.TabIndex = 7;
+            dtpk_ngaysinh.Value = new DateTime(2023, 12, 1, 12, 53, 45, 509);
+            // 
+            // cbb_gioitinh
+            // 
+            cbb_gioitinh.BackColor = Color.Transparent;
+            cbb_gioitinh.BorderRadius = 5;
+            cbb_gioitinh.CustomizableEdges = customizableEdges19;
+            cbb_gioitinh.DrawMode = DrawMode.OwnerDrawFixed;
+            cbb_gioitinh.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbb_gioitinh.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbb_gioitinh.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbb_gioitinh.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cbb_gioitinh.ForeColor = Color.FromArgb(68, 88, 112);
+            cbb_gioitinh.ItemHeight = 30;
+            cbb_gioitinh.Location = new Point(483, 238);
+            cbb_gioitinh.Name = "cbb_gioitinh";
+            cbb_gioitinh.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            cbb_gioitinh.Size = new Size(126, 36);
+            cbb_gioitinh.TabIndex = 10;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(483, 209);
+            label9.Name = "label9";
+            label9.RightToLeft = RightToLeft.No;
+            label9.Size = new Size(86, 25);
+            label9.TabIndex = 9;
+            label9.Text = "Giới tính";
             // 
             // QLTX_sua_dialog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(852, 514);
-            Controls.Add(guna2DateTimePicker1);
+            Controls.Add(cbb_gioitinh);
+            Controls.Add(label9);
+            Controls.Add(dtpk_ngaysinh);
             Controls.Add(pbx_anhtx);
             Controls.Add(btn_upanh);
             Controls.Add(btn_thoat);
@@ -414,6 +450,8 @@
         private Guna.UI2.WinForms.Guna2TextBox tb_maxe;
         private OpenFileDialog openFileDialog1;
         private PictureBox pbx_anhtx;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpk_ngaysinh;
+        private Guna.UI2.WinForms.Guna2ComboBox cbb_gioitinh;
+        private Label label9;
     }
 }

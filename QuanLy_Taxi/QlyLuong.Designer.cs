@@ -77,6 +77,7 @@
             btn_luong_them.Size = new Size(101, 45);
             btn_luong_them.TabIndex = 2;
             btn_luong_them.Text = "Thêm mới";
+            btn_luong_them.Click += btn_luong_them_Click;
             // 
             // btn_luong_sua
             // 
@@ -95,6 +96,7 @@
             btn_luong_sua.Size = new Size(91, 45);
             btn_luong_sua.TabIndex = 2;
             btn_luong_sua.Text = "Sửa";
+            btn_luong_sua.Click += btn_luong_sua_Click;
             // 
             // btn_luong_xoa
             // 
@@ -131,6 +133,7 @@
             btn_luong_chitiet.Size = new Size(84, 45);
             btn_luong_chitiet.TabIndex = 2;
             btn_luong_chitiet.Text = "Chi tiết";
+            btn_luong_chitiet.Click += btn_luong_chitiet_Click;
             // 
             // guna2DataGridView1
             // 

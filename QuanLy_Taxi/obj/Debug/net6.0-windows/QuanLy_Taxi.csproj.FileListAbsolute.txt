@@ -46,3 +46,12 @@ T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.QLTX_chi
 T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.QLXe_them_dialog.resources
 T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.QLXe_chitiet_dialog.resources
 T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.QLXe_sua_dialog.resources
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.QLLuong_them_dialog.resources
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.QLLuong_chitiet_dialog.resources
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\obj\Debug\net6.0-windows\QuanLy_Taxi.QLLuong_sua_dialog.resources
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+T:\Code\C#\QuanLy_Taxi\QuanLy_Taxi\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

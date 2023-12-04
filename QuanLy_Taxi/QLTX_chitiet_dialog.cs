@@ -15,12 +15,15 @@ namespace QuanLy_Taxi
         public QLTX_chitiet_dialog()
         {
             InitializeComponent();
+            cbb_gioitinh.Items.Add("Nam");
+            cbb_gioitinh.Items.Add("Nữ");
             tb_matx.Enabled = false;
             tb_hoten.Enabled = false;
             tb_dchi.Enabled = false;
             tb_sdt.Enabled = false;
             tb_maxe.Enabled = false;
             dtpk_ngaysinh.Enabled = false;
+            cbb_gioitinh.Enabled = false;
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
@@ -45,6 +48,16 @@ namespace QuanLy_Taxi
             {
                 pbx_anhtx.Image = Image.FromFile(openFileDialog1.FileName);
             }
+        }
+        public void SetData(string matxe, string hoten, DateTime ngaysinh, string gioitinh, string diachi, string sdt, string maxe)
+        {
+            tb_matx.Text = matxe;
+            tb_hoten.Text = hoten;
+            dtpk_ngaysinh.Value = ngaysinh;
+            cbb_gioitinh.Text = gioitinh;
+            tb_dchi.Text = diachi;
+            tb_sdt.Text = sdt;
+            tb_maxe.Text = maxe;
         }
     }
 }
