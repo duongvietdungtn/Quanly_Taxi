@@ -108,7 +108,7 @@
             // 
             guna2Button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             guna2Button1.BackgroundImageLayout = ImageLayout.Center;
-            guna2Button1.BorderRadius = 16;
+            guna2Button1.BorderRadius = 8;
             guna2Button1.BorderThickness = 1;
             guna2Button1.CustomizableEdges = customizableEdges1;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
@@ -151,7 +151,7 @@
             // btn_thongke
             // 
             btn_thongke.BackgroundImageLayout = ImageLayout.Center;
-            btn_thongke.BorderRadius = 16;
+            btn_thongke.BorderRadius = 8;
             btn_thongke.BorderThickness = 1;
             btn_thongke.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             btn_thongke.CustomizableEdges = customizableEdges3;
@@ -175,7 +175,7 @@
             // btn_qlcdi
             // 
             btn_qlcdi.BackgroundImageLayout = ImageLayout.Center;
-            btn_qlcdi.BorderRadius = 16;
+            btn_qlcdi.BorderRadius = 8;
             btn_qlcdi.BorderThickness = 1;
             btn_qlcdi.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             btn_qlcdi.CustomizableEdges = customizableEdges5;
@@ -199,7 +199,7 @@
             // btn_qlxe
             // 
             btn_qlxe.BackgroundImageLayout = ImageLayout.Center;
-            btn_qlxe.BorderRadius = 16;
+            btn_qlxe.BorderRadius = 8;
             btn_qlxe.BorderThickness = 1;
             btn_qlxe.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             btn_qlxe.CustomizableEdges = customizableEdges7;
@@ -223,7 +223,7 @@
             // 
             // btn_qlluong
             // 
-            btn_qlluong.BorderRadius = 16;
+            btn_qlluong.BorderRadius = 8;
             btn_qlluong.BorderThickness = 1;
             btn_qlluong.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             btn_qlluong.CustomizableEdges = customizableEdges9;
@@ -247,7 +247,7 @@
             // 
             // btn_qltkhoan
             // 
-            btn_qltkhoan.BorderRadius = 16;
+            btn_qltkhoan.BorderRadius = 8;
             btn_qltkhoan.BorderThickness = 1;
             btn_qltkhoan.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             btn_qltkhoan.CustomizableEdges = customizableEdges11;
@@ -270,7 +270,7 @@
             // 
             // btn_qltxe
             // 
-            btn_qltxe.BorderRadius = 16;
+            btn_qltxe.BorderRadius = 8;
             btn_qltxe.BorderThickness = 1;
             btn_qltxe.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             btn_qltxe.CustomizableEdges = customizableEdges13;
@@ -294,7 +294,7 @@
             // 
             // btn_trangchu
             // 
-            btn_trangchu.BorderRadius = 16;
+            btn_trangchu.BorderRadius = 8;
             btn_trangchu.BorderThickness = 1;
             btn_trangchu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             btn_trangchu.CustomizableEdges = customizableEdges15;

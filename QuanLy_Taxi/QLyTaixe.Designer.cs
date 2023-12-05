@@ -161,6 +161,7 @@
             // 
             // dtgrid_QLTxe
             // 
+            dtgrid_QLTxe.AllowUserToAddRows = false;
             dtgrid_QLTxe.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dtgrid_QLTxe.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgrid_QLTxe.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;

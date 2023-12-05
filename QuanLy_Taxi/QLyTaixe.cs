@@ -132,53 +132,53 @@ namespace QuanLy_Taxi
             con.Close();
         }
 
-       private void btn_txe_xoa_Click(object sender, EventArgs e)
-{
-    // Lấy dòng được chọn từ DataGridView
-    DataGridViewRow selectedRow = dtgrid_QLTxe.SelectedRows.Cast<DataGridViewRow>().FirstOrDefault();
-
-    if (selectedRow != null)
-    {
-        // Trích xuất giá trị của trường "Matxe" từ dòng được chọn
-        string matxe = selectedRow.Cells["Matxe"].Value.ToString();
-
-        // Hiển thị hộp thoại xác nhận
-        DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-        if (result == DialogResult.Yes)
+        private void btn_txe_xoa_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // Tạo câu lệnh SQL DELETE
-                string sqlDelete = "DELETE FROM QLTxe WHERE Matxe = @Matxe";
+            // Lấy dòng được chọn từ DataGridView
+            DataGridViewRow selectedRow = dtgrid_QLTxe.SelectedRows.Cast<DataGridViewRow>().FirstOrDefault();
 
-                using (SqlCommand cmd = new SqlCommand(sqlDelete, conn))
+            if (selectedRow != null)
+            {
+                // Trích xuất giá trị của trường "Matxe" từ dòng được chọn
+                string matxe = selectedRow.Cells["Matxe"].Value.ToString();
+
+                // Hiển thị hộp thoại xác nhận
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
                 {
-                    // Thêm tham số cho trường "Matxe"
-                    cmd.Parameters.AddWithValue("@Matxe", matxe);
+                    try
+                    {
+                        // Tạo câu lệnh SQL DELETE
+                        string sqlDelete = "DELETE FROM QLTxe WHERE Matxe = @Matxe";
 
-                    // Thực hiện câu lệnh SQL DELETE
-                    cmd.ExecuteNonQuery();
+                        using (SqlCommand cmd = new SqlCommand(sqlDelete, conn))
+                        {
+                            // Thêm tham số cho trường "Matxe"
+                            cmd.Parameters.AddWithValue("@Matxe", matxe);
 
-                    // Thông báo thành công nếu không có lỗi
-                    //MessageBox.Show("Dữ liệu đã được xóa khỏi CSDL thành công!");
+                            // Thực hiện câu lệnh SQL DELETE
+                            cmd.ExecuteNonQuery();
+
+                            // Thông báo thành công nếu không có lỗi
+                            //MessageBox.Show("Dữ liệu đã được xóa khỏi CSDL thành công!");
+                        }
+
+                        // Refresh DataGridView to reflect the changes
+                        RefreshDataGridView();
+                    }
+                    catch (Exception ex)
+                    {
+                        // Hiển thị thông báo lỗi nếu có lỗi xảy ra
+                        MessageBox.Show("Lỗi: " + ex.Message);
+                    }
                 }
-
-                // Refresh DataGridView to reflect the changes
-                RefreshDataGridView();
             }
-            catch (Exception ex)
+            else
             {
-                // Hiển thị thông báo lỗi nếu có lỗi xảy ra
-                MessageBox.Show("Lỗi: " + ex.Message);
+                MessageBox.Show("Vui lòng chọn một dòng để xóa.");
             }
         }
-    }
-    else
-    {
-        MessageBox.Show("Vui lòng chọn một dòng để xóa.");
-    }
-}
 
         public void RefreshDataGridView()
         {
