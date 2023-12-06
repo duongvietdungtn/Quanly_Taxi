@@ -101,5 +101,23 @@ namespace QuanLy_Taxi
                 MessageBox.Show("Lỗi khi tải dữ liệu từ CSDL: " + ex.Message);
             }
         }
+        public void RefreshDataGridView()
+        {
+            // Refresh the DataGridView after adding a new record
+            try
+            {
+                SqlCommand cmd = new SqlCommand("Select Maxe, Bienxe, Hangxe, Tenxe, Soghe, Namsx, Sokhung, Matxe, Hoten FROM QLXe", conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dtgrid_QLXe.Columns.Clear();
+                dtgrid_QLXe.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu từ CSDL: " + ex.Message);
+            }
+        }
     }
 }

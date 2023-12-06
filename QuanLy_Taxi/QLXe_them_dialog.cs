@@ -56,7 +56,38 @@ namespace QuanLy_Taxi
 
         private void btn_luu_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
+                // Tạo câu lệnh SQL INSERT với các giá trị từ các điều khiển trên form
+                string sqlInsert = "INSERT INTO QLXe (Maxe, Bienxe, Hangxe, Tenxe, Soghe, Namsx, Sokhung, Matxe, Hoten) " +
+                                   "VALUES (@Maxe, @Bienxe, @Hangxe, @Tenxe, @Soghe, @Namsx, @Sokhung, @Matxe, @Hoten)";
+
+                using (SqlCommand cmd = new SqlCommand(sqlInsert, conn))
+                {
+                    // Thay thế các tham số trong câu lệnh SQL bằng giá trị từ các điều khiển trên form
+                    cmd.Parameters.AddWithValue("@Maxe", tb_maxe.Text);
+                    cmd.Parameters.AddWithValue("@Bienxe", tb_bienxe.Text);
+                    cmd.Parameters.AddWithValue("@Hangxe", tb_hangxe.Text);
+                    cmd.Parameters.AddWithValue("@Tenxe", tb_tenxe.Text);
+                    cmd.Parameters.AddWithValue("@Soghe", tb_soghe.Text);
+                    cmd.Parameters.AddWithValue("@Namsx", tb_namsx.Text);
+                    cmd.Parameters.AddWithValue("@Sokhung", tb_sokhung.Text);
+                    cmd.Parameters.AddWithValue("@Matxe", tb_matxe.Text);
+                    cmd.Parameters.AddWithValue("@Hoten", tb_name.Text);
+
+                    // Thực hiện câu lệnh SQL INSERT
+                    cmd.ExecuteNonQuery();
+
+                    // Thông báo thành công nếu không có lỗi
+                    MessageBox.Show("Dữ liệu đã được thêm vào CSDL thành công!");
+                    ((QLyXe)this.Owner).RefreshDataGridView();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Hiển thị thông báo lỗi nếu có lỗi xảy ra
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
     }
 }
