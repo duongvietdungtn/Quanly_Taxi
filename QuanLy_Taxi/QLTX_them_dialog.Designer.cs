@@ -48,6 +48,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             label2 = new Label();
             tb_matx = new Guna.UI2.WinForms.Guna2TextBox();
@@ -69,6 +71,8 @@
             cbb_gioitinh = new Guna.UI2.WinForms.Guna2ComboBox();
             label9 = new Label();
             cbb_Maxe = new Guna.UI2.WinForms.Guna2ComboBox();
+            tb_link = new Guna.UI2.WinForms.Guna2TextBox();
+            label10 = new Label();
             ((System.ComponentModel.ISupportInitialize)pbx_anhtx).BeginInit();
             SuspendLayout();
             // 
@@ -133,7 +137,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(282, 210);
+            label4.Location = new Point(282, 197);
             label4.Name = "label4";
             label4.RightToLeft = RightToLeft.No;
             label4.Size = new Size(98, 25);
@@ -144,7 +148,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(643, 209);
+            label5.Location = new Point(643, 196);
             label5.Name = "label5";
             label5.RightToLeft = RightToLeft.No;
             label5.Size = new Size(71, 25);
@@ -155,7 +159,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(282, 316);
+            label6.Location = new Point(282, 285);
             label6.Name = "label6";
             label6.RightToLeft = RightToLeft.No;
             label6.Size = new Size(125, 25);
@@ -166,7 +170,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(583, 316);
+            label7.Location = new Point(583, 285);
             label7.Name = "label7";
             label7.RightToLeft = RightToLeft.No;
             label7.Size = new Size(89, 25);
@@ -195,7 +199,7 @@
             btn_luu.FillColor = Color.FromArgb(0, 192, 0);
             btn_luu.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btn_luu.ForeColor = Color.White;
-            btn_luu.Location = new Point(272, 457);
+            btn_luu.Location = new Point(272, 470);
             btn_luu.Name = "btn_luu";
             btn_luu.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btn_luu.Size = new Size(108, 45);
@@ -214,7 +218,7 @@
             btn_thoat.FillColor = Color.Red;
             btn_thoat.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btn_thoat.ForeColor = Color.White;
-            btn_thoat.Location = new Point(436, 457);
+            btn_thoat.Location = new Point(436, 470);
             btn_thoat.Name = "btn_thoat";
             btn_thoat.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btn_thoat.Size = new Size(106, 45);
@@ -236,7 +240,7 @@
             btn_upanh.Location = new Point(43, 394);
             btn_upanh.Name = "btn_upanh";
             btn_upanh.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btn_upanh.Size = new Size(179, 32);
+            btn_upanh.Size = new Size(185, 39);
             btn_upanh.TabIndex = 5;
             btn_upanh.Text = "Chọn ảnh";
             btn_upanh.Click += btn_upanh_Click;
@@ -276,7 +280,7 @@
             tb_dchi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_dchi.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Regular, GraphicsUnit.Point);
             tb_dchi.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_dchi.Location = new Point(643, 238);
+            tb_dchi.Location = new Point(643, 225);
             tb_dchi.Margin = new Padding(4, 4, 4, 4);
             tb_dchi.Name = "tb_dchi";
             tb_dchi.PasswordChar = '\0';
@@ -299,7 +303,7 @@
             tb_sdt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_sdt.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Regular, GraphicsUnit.Point);
             tb_sdt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_sdt.Location = new Point(282, 342);
+            tb_sdt.Location = new Point(282, 311);
             tb_sdt.Margin = new Padding(4, 4, 4, 4);
             tb_sdt.Name = "tb_sdt";
             tb_sdt.PasswordChar = '\0';
@@ -319,7 +323,7 @@
             pbx_anhtx.BorderStyle = BorderStyle.FixedSingle;
             pbx_anhtx.Location = new Point(43, 136);
             pbx_anhtx.Name = "pbx_anhtx";
-            pbx_anhtx.Size = new Size(179, 252);
+            pbx_anhtx.Size = new Size(185, 252);
             pbx_anhtx.SizeMode = PictureBoxSizeMode.StretchImage;
             pbx_anhtx.TabIndex = 6;
             pbx_anhtx.TabStop = false;
@@ -333,7 +337,7 @@
             dtpk_ngaysinh.FillColor = Color.White;
             dtpk_ngaysinh.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             dtpk_ngaysinh.Format = DateTimePickerFormat.Custom;
-            dtpk_ngaysinh.Location = new Point(282, 238);
+            dtpk_ngaysinh.Location = new Point(282, 225);
             dtpk_ngaysinh.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpk_ngaysinh.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpk_ngaysinh.Name = "dtpk_ngaysinh";
@@ -355,7 +359,7 @@
             cbb_gioitinh.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             cbb_gioitinh.ForeColor = Color.FromArgb(68, 88, 112);
             cbb_gioitinh.ItemHeight = 30;
-            cbb_gioitinh.Location = new Point(488, 238);
+            cbb_gioitinh.Location = new Point(488, 225);
             cbb_gioitinh.Name = "cbb_gioitinh";
             cbb_gioitinh.ShadowDecoration.CustomizableEdges = customizableEdges18;
             cbb_gioitinh.Size = new Size(119, 36);
@@ -366,7 +370,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(488, 209);
+            label9.Location = new Point(488, 196);
             label9.Name = "label9";
             label9.RightToLeft = RightToLeft.No;
             label9.Size = new Size(86, 25);
@@ -379,24 +383,60 @@
             cbb_Maxe.BorderRadius = 5;
             cbb_Maxe.CustomizableEdges = customizableEdges19;
             cbb_Maxe.DrawMode = DrawMode.OwnerDrawFixed;
+            cbb_Maxe.DropDownHeight = 250;
             cbb_Maxe.DropDownStyle = ComboBoxStyle.DropDownList;
             cbb_Maxe.FocusedColor = Color.FromArgb(94, 148, 255);
             cbb_Maxe.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             cbb_Maxe.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             cbb_Maxe.ForeColor = Color.FromArgb(68, 88, 112);
+            cbb_Maxe.IntegralHeight = false;
             cbb_Maxe.ItemHeight = 30;
-            cbb_Maxe.Location = new Point(583, 344);
+            cbb_Maxe.Location = new Point(583, 313);
             cbb_Maxe.Name = "cbb_Maxe";
             cbb_Maxe.ShadowDecoration.CustomizableEdges = customizableEdges20;
             cbb_Maxe.Size = new Size(242, 36);
             cbb_Maxe.TabIndex = 8;
             cbb_Maxe.SelectedIndexChanged += cbb_gioitinh_SelectedIndexChanged;
             // 
+            // tb_link
+            // 
+            tb_link.BorderRadius = 5;
+            tb_link.CustomizableEdges = customizableEdges21;
+            tb_link.DefaultText = "";
+            tb_link.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tb_link.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tb_link.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tb_link.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_link.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_link.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tb_link.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_link.Location = new Point(282, 395);
+            tb_link.Margin = new Padding(4, 4, 4, 4);
+            tb_link.Name = "tb_link";
+            tb_link.PasswordChar = '\0';
+            tb_link.PlaceholderText = "";
+            tb_link.RightToLeft = RightToLeft.No;
+            tb_link.SelectedText = "";
+            tb_link.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            tb_link.Size = new Size(543, 38);
+            tb_link.TabIndex = 2;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(282, 365);
+            label10.Name = "label10";
+            label10.RightToLeft = RightToLeft.No;
+            label10.Size = new Size(146, 25);
+            label10.TabIndex = 1;
+            label10.Text = "Đường dẫn ảnh";
+            // 
             // QLTX_them_dialog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(852, 514);
+            ClientSize = new Size(852, 527);
             Controls.Add(cbb_Maxe);
             Controls.Add(cbb_gioitinh);
             Controls.Add(dtpk_ngaysinh);
@@ -407,11 +447,13 @@
             Controls.Add(label7);
             Controls.Add(label9);
             Controls.Add(label5);
+            Controls.Add(label10);
             Controls.Add(label6);
             Controls.Add(label3);
             Controls.Add(label4);
             Controls.Add(tb_dchi);
             Controls.Add(tb_name);
+            Controls.Add(tb_link);
             Controls.Add(tb_sdt);
             Controls.Add(tb_matx);
             Controls.Add(label8);
@@ -450,5 +492,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbb_gioitinh;
         private Label label9;
         private Guna.UI2.WinForms.Guna2ComboBox cbb_Maxe;
+        private Guna.UI2.WinForms.Guna2TextBox tb_link;
+        private Label label10;
     }
 }

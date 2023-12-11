@@ -48,6 +48,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             label2 = new Label();
             tb_matx = new Guna.UI2.WinForms.Guna2TextBox();
@@ -63,12 +65,14 @@
             tb_name = new Guna.UI2.WinForms.Guna2TextBox();
             tb_dchi = new Guna.UI2.WinForms.Guna2TextBox();
             tb_sdt = new Guna.UI2.WinForms.Guna2TextBox();
-            tb_maxe = new Guna.UI2.WinForms.Guna2TextBox();
             openFileDialog1 = new OpenFileDialog();
             pbx_anhtx = new PictureBox();
             dtpk_ngaysinh = new Guna.UI2.WinForms.Guna2DateTimePicker();
             cbb_gioitinh = new Guna.UI2.WinForms.Guna2ComboBox();
             label9 = new Label();
+            cbb_Maxe = new Guna.UI2.WinForms.Guna2ComboBox();
+            tb_link = new Guna.UI2.WinForms.Guna2TextBox();
+            label10 = new Label();
             ((System.ComponentModel.ISupportInitialize)pbx_anhtx).BeginInit();
             SuspendLayout();
             // 
@@ -133,7 +137,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(282, 210);
+            label4.Location = new Point(282, 196);
             label4.Name = "label4";
             label4.RightToLeft = RightToLeft.No;
             label4.Size = new Size(98, 25);
@@ -144,7 +148,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(641, 209);
+            label5.Location = new Point(641, 195);
             label5.Name = "label5";
             label5.RightToLeft = RightToLeft.No;
             label5.Size = new Size(71, 25);
@@ -155,7 +159,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(282, 316);
+            label6.Location = new Point(282, 274);
             label6.Name = "label6";
             label6.RightToLeft = RightToLeft.No;
             label6.Size = new Size(125, 25);
@@ -166,7 +170,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(578, 316);
+            label7.Location = new Point(578, 274);
             label7.Name = "label7";
             label7.RightToLeft = RightToLeft.No;
             label7.Size = new Size(89, 25);
@@ -276,7 +280,7 @@
             tb_dchi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_dchi.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Regular, GraphicsUnit.Point);
             tb_dchi.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_dchi.Location = new Point(641, 238);
+            tb_dchi.Location = new Point(641, 224);
             tb_dchi.Margin = new Padding(4, 4, 4, 4);
             tb_dchi.Name = "tb_dchi";
             tb_dchi.PasswordChar = '\0';
@@ -299,7 +303,7 @@
             tb_sdt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_sdt.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Regular, GraphicsUnit.Point);
             tb_sdt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_sdt.Location = new Point(282, 342);
+            tb_sdt.Location = new Point(282, 300);
             tb_sdt.Margin = new Padding(4, 4, 4, 4);
             tb_sdt.Name = "tb_sdt";
             tb_sdt.PasswordChar = '\0';
@@ -309,29 +313,6 @@
             tb_sdt.ShadowDecoration.CustomizableEdges = customizableEdges14;
             tb_sdt.Size = new Size(251, 46);
             tb_sdt.TabIndex = 2;
-            // 
-            // tb_maxe
-            // 
-            tb_maxe.BorderRadius = 5;
-            tb_maxe.CustomizableEdges = customizableEdges15;
-            tb_maxe.DefaultText = "";
-            tb_maxe.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tb_maxe.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tb_maxe.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tb_maxe.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tb_maxe.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_maxe.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tb_maxe.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_maxe.Location = new Point(578, 342);
-            tb_maxe.Margin = new Padding(4, 4, 4, 4);
-            tb_maxe.Name = "tb_maxe";
-            tb_maxe.PasswordChar = '\0';
-            tb_maxe.PlaceholderText = "";
-            tb_maxe.RightToLeft = RightToLeft.No;
-            tb_maxe.SelectedText = "";
-            tb_maxe.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            tb_maxe.Size = new Size(242, 46);
-            tb_maxe.TabIndex = 2;
             // 
             // openFileDialog1
             // 
@@ -352,16 +333,16 @@
             dtpk_ngaysinh.BorderRadius = 5;
             dtpk_ngaysinh.Checked = true;
             dtpk_ngaysinh.CustomFormat = "  dd-MM-yyyy";
-            dtpk_ngaysinh.CustomizableEdges = customizableEdges17;
+            dtpk_ngaysinh.CustomizableEdges = customizableEdges15;
             dtpk_ngaysinh.FillColor = Color.White;
             dtpk_ngaysinh.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Regular, GraphicsUnit.Point);
             dtpk_ngaysinh.Format = DateTimePickerFormat.Custom;
-            dtpk_ngaysinh.Location = new Point(282, 238);
+            dtpk_ngaysinh.Location = new Point(282, 224);
             dtpk_ngaysinh.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpk_ngaysinh.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpk_ngaysinh.Name = "dtpk_ngaysinh";
             dtpk_ngaysinh.RightToLeft = RightToLeft.No;
-            dtpk_ngaysinh.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            dtpk_ngaysinh.ShadowDecoration.CustomizableEdges = customizableEdges16;
             dtpk_ngaysinh.Size = new Size(174, 36);
             dtpk_ngaysinh.TabIndex = 7;
             dtpk_ngaysinh.Value = new DateTime(2023, 12, 1, 12, 53, 45, 509);
@@ -370,7 +351,7 @@
             // 
             cbb_gioitinh.BackColor = Color.Transparent;
             cbb_gioitinh.BorderRadius = 5;
-            cbb_gioitinh.CustomizableEdges = customizableEdges19;
+            cbb_gioitinh.CustomizableEdges = customizableEdges17;
             cbb_gioitinh.DrawMode = DrawMode.OwnerDrawFixed;
             cbb_gioitinh.DropDownStyle = ComboBoxStyle.DropDownList;
             cbb_gioitinh.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -378,9 +359,9 @@
             cbb_gioitinh.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Regular, GraphicsUnit.Point);
             cbb_gioitinh.ForeColor = Color.FromArgb(68, 88, 112);
             cbb_gioitinh.ItemHeight = 30;
-            cbb_gioitinh.Location = new Point(483, 238);
+            cbb_gioitinh.Location = new Point(483, 224);
             cbb_gioitinh.Name = "cbb_gioitinh";
-            cbb_gioitinh.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            cbb_gioitinh.ShadowDecoration.CustomizableEdges = customizableEdges18;
             cbb_gioitinh.Size = new Size(126, 36);
             cbb_gioitinh.TabIndex = 10;
             // 
@@ -388,18 +369,73 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(483, 209);
+            label9.Location = new Point(483, 195);
             label9.Name = "label9";
             label9.RightToLeft = RightToLeft.No;
             label9.Size = new Size(86, 25);
             label9.TabIndex = 9;
             label9.Text = "Giới tính";
             // 
+            // cbb_Maxe
+            // 
+            cbb_Maxe.BackColor = Color.Transparent;
+            cbb_Maxe.BorderRadius = 5;
+            cbb_Maxe.CustomizableEdges = customizableEdges19;
+            cbb_Maxe.DrawMode = DrawMode.OwnerDrawFixed;
+            cbb_Maxe.DropDownHeight = 250;
+            cbb_Maxe.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbb_Maxe.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbb_Maxe.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbb_Maxe.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cbb_Maxe.ForeColor = Color.FromArgb(68, 88, 112);
+            cbb_Maxe.IntegralHeight = false;
+            cbb_Maxe.ItemHeight = 40;
+            cbb_Maxe.Location = new Point(578, 300);
+            cbb_Maxe.Name = "cbb_Maxe";
+            cbb_Maxe.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            cbb_Maxe.Size = new Size(242, 46);
+            cbb_Maxe.TabIndex = 10;
+            // 
+            // tb_link
+            // 
+            tb_link.BorderRadius = 5;
+            tb_link.CustomizableEdges = customizableEdges21;
+            tb_link.DefaultText = "";
+            tb_link.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tb_link.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tb_link.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tb_link.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_link.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_link.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tb_link.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_link.Location = new Point(282, 390);
+            tb_link.Margin = new Padding(4, 4, 4, 4);
+            tb_link.Name = "tb_link";
+            tb_link.PasswordChar = '\0';
+            tb_link.PlaceholderText = "";
+            tb_link.RightToLeft = RightToLeft.No;
+            tb_link.SelectedText = "";
+            tb_link.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            tb_link.Size = new Size(538, 36);
+            tb_link.TabIndex = 2;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(282, 363);
+            label10.Name = "label10";
+            label10.RightToLeft = RightToLeft.No;
+            label10.Size = new Size(146, 25);
+            label10.TabIndex = 1;
+            label10.Text = "Đường dẫn ảnh";
+            // 
             // QLTX_sua_dialog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(852, 514);
+            Controls.Add(cbb_Maxe);
             Controls.Add(cbb_gioitinh);
             Controls.Add(label9);
             Controls.Add(dtpk_ngaysinh);
@@ -409,12 +445,13 @@
             Controls.Add(btn_luu);
             Controls.Add(label7);
             Controls.Add(label5);
+            Controls.Add(label10);
             Controls.Add(label6);
             Controls.Add(label3);
             Controls.Add(label4);
-            Controls.Add(tb_maxe);
             Controls.Add(tb_dchi);
             Controls.Add(tb_name);
+            Controls.Add(tb_link);
             Controls.Add(tb_sdt);
             Controls.Add(tb_matx);
             Controls.Add(label8);
@@ -447,11 +484,13 @@
         private Guna.UI2.WinForms.Guna2TextBox tb_name;
         private Guna.UI2.WinForms.Guna2TextBox tb_dchi;
         private Guna.UI2.WinForms.Guna2TextBox tb_sdt;
-        private Guna.UI2.WinForms.Guna2TextBox tb_maxe;
         private OpenFileDialog openFileDialog1;
         private PictureBox pbx_anhtx;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpk_ngaysinh;
         private Guna.UI2.WinForms.Guna2ComboBox cbb_gioitinh;
         private Label label9;
+        private Guna.UI2.WinForms.Guna2ComboBox cbb_Maxe;
+        private Guna.UI2.WinForms.Guna2TextBox tb_link;
+        private Label label10;
     }
 }

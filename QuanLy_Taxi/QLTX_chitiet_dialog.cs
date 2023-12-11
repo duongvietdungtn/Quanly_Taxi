@@ -25,6 +25,11 @@ namespace QuanLy_Taxi
             dtpk_ngaysinh.Enabled = false;
             cbb_gioitinh.Enabled = false;
         }
+        public void SetImage(Image image)
+        {
+            pbx_anhtx.Image = image;
+        }
+
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
         {

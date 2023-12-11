@@ -9,8 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.0.3" />
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.6" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <HintPath>C:\Windows\SysWOW64\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

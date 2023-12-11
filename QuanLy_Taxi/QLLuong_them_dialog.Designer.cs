@@ -48,7 +48,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             label2 = new Label();
-            tb_matxe = new Guna.UI2.WinForms.Guna2TextBox();
             label3 = new Label();
             label5 = new Label();
             label6 = new Label();
@@ -66,6 +65,7 @@
             cbb_thang = new Guna.UI2.WinForms.Guna2ComboBox();
             label9 = new Label();
             cbb_nam = new Guna.UI2.WinForms.Guna2ComboBox();
+            cbb_matxe = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)pbx_anhtx).BeginInit();
             SuspendLayout();
             // 
@@ -91,29 +91,6 @@
             label2.Size = new Size(117, 25);
             label2.TabIndex = 1;
             label2.Text = "Mã số Tài xế";
-            // 
-            // tb_matxe
-            // 
-            tb_matxe.BorderRadius = 5;
-            tb_matxe.CustomizableEdges = customizableEdges1;
-            tb_matxe.DefaultText = "";
-            tb_matxe.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tb_matxe.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tb_matxe.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tb_matxe.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tb_matxe.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_matxe.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tb_matxe.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_matxe.Location = new Point(282, 239);
-            tb_matxe.Margin = new Padding(3, 4, 3, 4);
-            tb_matxe.Name = "tb_matxe";
-            tb_matxe.PasswordChar = '\0';
-            tb_matxe.PlaceholderText = "";
-            tb_matxe.RightToLeft = RightToLeft.No;
-            tb_matxe.SelectedText = "";
-            tb_matxe.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            tb_matxe.Size = new Size(251, 46);
-            tb_matxe.TabIndex = 2;
             // 
             // label3
             // 
@@ -162,7 +139,7 @@
             // btn_luu
             // 
             btn_luu.BorderRadius = 6;
-            btn_luu.CustomizableEdges = customizableEdges3;
+            btn_luu.CustomizableEdges = customizableEdges1;
             btn_luu.DisabledState.BorderColor = Color.DarkGray;
             btn_luu.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_luu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -172,15 +149,16 @@
             btn_luu.ForeColor = Color.White;
             btn_luu.Location = new Point(284, 425);
             btn_luu.Name = "btn_luu";
-            btn_luu.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btn_luu.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btn_luu.Size = new Size(108, 45);
             btn_luu.TabIndex = 4;
             btn_luu.Text = "Lưu lại";
+            btn_luu.Click += btn_luu_Click;
             // 
             // btn_thoat
             // 
             btn_thoat.BorderRadius = 6;
-            btn_thoat.CustomizableEdges = customizableEdges5;
+            btn_thoat.CustomizableEdges = customizableEdges3;
             btn_thoat.DisabledState.BorderColor = Color.DarkGray;
             btn_thoat.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_thoat.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -190,7 +168,7 @@
             btn_thoat.ForeColor = Color.White;
             btn_thoat.Location = new Point(448, 425);
             btn_thoat.Name = "btn_thoat";
-            btn_thoat.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btn_thoat.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btn_thoat.Size = new Size(106, 45);
             btn_thoat.TabIndex = 4;
             btn_thoat.Text = "Thoát";
@@ -199,7 +177,7 @@
             // tb_name
             // 
             tb_name.BorderRadius = 5;
-            tb_name.CustomizableEdges = customizableEdges7;
+            tb_name.CustomizableEdges = customizableEdges5;
             tb_name.DefaultText = "";
             tb_name.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tb_name.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -215,14 +193,14 @@
             tb_name.PlaceholderText = "";
             tb_name.RightToLeft = RightToLeft.No;
             tb_name.SelectedText = "";
-            tb_name.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            tb_name.Size = new Size(242, 46);
+            tb_name.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            tb_name.Size = new Size(242, 45);
             tb_name.TabIndex = 2;
             // 
             // tb_ngaycong
             // 
             tb_ngaycong.BorderRadius = 5;
-            tb_ngaycong.CustomizableEdges = customizableEdges9;
+            tb_ngaycong.CustomizableEdges = customizableEdges7;
             tb_ngaycong.DefaultText = "";
             tb_ngaycong.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tb_ngaycong.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -238,14 +216,14 @@
             tb_ngaycong.PlaceholderText = "";
             tb_ngaycong.RightToLeft = RightToLeft.No;
             tb_ngaycong.SelectedText = "";
-            tb_ngaycong.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            tb_ngaycong.ShadowDecoration.CustomizableEdges = customizableEdges8;
             tb_ngaycong.Size = new Size(127, 46);
             tb_ngaycong.TabIndex = 2;
             // 
             // tb_thuong
             // 
             tb_thuong.BorderRadius = 5;
-            tb_thuong.CustomizableEdges = customizableEdges11;
+            tb_thuong.CustomizableEdges = customizableEdges9;
             tb_thuong.DefaultText = "";
             tb_thuong.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tb_thuong.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -261,7 +239,7 @@
             tb_thuong.PlaceholderText = "";
             tb_thuong.RightToLeft = RightToLeft.No;
             tb_thuong.SelectedText = "";
-            tb_thuong.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            tb_thuong.ShadowDecoration.CustomizableEdges = customizableEdges10;
             tb_thuong.Size = new Size(158, 46);
             tb_thuong.TabIndex = 2;
             // 
@@ -293,7 +271,7 @@
             // tb_phat
             // 
             tb_phat.BorderRadius = 5;
-            tb_phat.CustomizableEdges = customizableEdges13;
+            tb_phat.CustomizableEdges = customizableEdges11;
             tb_phat.DefaultText = "";
             tb_phat.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tb_phat.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -309,7 +287,7 @@
             tb_phat.PlaceholderText = "";
             tb_phat.RightToLeft = RightToLeft.No;
             tb_phat.SelectedText = "";
-            tb_phat.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            tb_phat.ShadowDecoration.CustomizableEdges = customizableEdges12;
             tb_phat.Size = new Size(158, 46);
             tb_phat.TabIndex = 2;
             // 
@@ -328,25 +306,28 @@
             // 
             cbb_thang.BackColor = Color.Transparent;
             cbb_thang.BorderRadius = 5;
-            cbb_thang.CustomizableEdges = customizableEdges15;
+            cbb_thang.CustomizableEdges = customizableEdges13;
             cbb_thang.DrawMode = DrawMode.OwnerDrawFixed;
+            cbb_thang.DropDownHeight = 250;
             cbb_thang.DropDownStyle = ComboBoxStyle.DropDownList;
             cbb_thang.FocusedColor = Color.FromArgb(94, 148, 255);
             cbb_thang.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             cbb_thang.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Regular, GraphicsUnit.Point);
             cbb_thang.ForeColor = Color.FromArgb(68, 88, 112);
-            cbb_thang.ItemHeight = 30;
+            cbb_thang.IntegralHeight = false;
+            cbb_thang.ItemHeight = 40;
+            cbb_thang.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
             cbb_thang.Location = new Point(282, 136);
             cbb_thang.Name = "cbb_thang";
-            cbb_thang.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            cbb_thang.Size = new Size(76, 36);
+            cbb_thang.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            cbb_thang.Size = new Size(92, 46);
             cbb_thang.TabIndex = 7;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(397, 108);
+            label9.Location = new Point(434, 108);
             label9.Name = "label9";
             label9.RightToLeft = RightToLeft.No;
             label9.Size = new Size(54, 25);
@@ -357,20 +338,40 @@
             // 
             cbb_nam.BackColor = Color.Transparent;
             cbb_nam.BorderRadius = 5;
-            cbb_nam.CustomizableEdges = customizableEdges17;
+            cbb_nam.CustomizableEdges = customizableEdges15;
             cbb_nam.DrawMode = DrawMode.OwnerDrawFixed;
+            cbb_nam.DropDownHeight = 250;
             cbb_nam.DropDownStyle = ComboBoxStyle.DropDownList;
             cbb_nam.FocusedColor = Color.FromArgb(94, 148, 255);
             cbb_nam.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             cbb_nam.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Regular, GraphicsUnit.Point);
             cbb_nam.ForeColor = Color.FromArgb(68, 88, 112);
-            cbb_nam.ItemHeight = 30;
-            cbb_nam.Location = new Point(397, 136);
+            cbb_nam.IntegralHeight = false;
+            cbb_nam.ItemHeight = 40;
+            cbb_nam.Items.AddRange(new object[] { "1900", "1901", "1902", "1903", "1904", "1905", "1906", "1907", "1908", "1909", "1910", "1911", "1912", "1913", "1914", "1915", "1916", "1917", "1918", "1919", "1920", "1921", "1922", "1923", "1924", "1925", "1926", "1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037", "2038", "2039", "2040", "2041", "2042", "2043", "2044", "2045", "2046", "2047", "2048", "2049", "2050", "2051", "2052", "2053", "2054", "2055", "2056", "2057", "2058", "2059", "2060", "2061", "2062", "2063", "2064", "2065", "2066", "2067", "2068", "2069", "2070", "2071", "2072", "2073", "2074", "2075", "2076", "2077", "2078", "2079", "2080", "2081", "2082", "2083", "2084", "2085", "2086", "2087", "2088", "2089", "2090", "2091", "2092", "2093", "2094", "2095", "2096", "2097", "2098", "2099", "2100" });
+            cbb_nam.Location = new Point(434, 136);
             cbb_nam.Name = "cbb_nam";
-            cbb_nam.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            cbb_nam.Size = new Size(104, 36);
+            cbb_nam.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            cbb_nam.Size = new Size(104, 46);
             cbb_nam.TabIndex = 7;
-            cbb_nam.SelectedIndexChanged += cbb_nam_SelectedIndexChanged;
+            // 
+            // cbb_matxe
+            // 
+            cbb_matxe.BackColor = Color.Transparent;
+            cbb_matxe.BorderRadius = 5;
+            cbb_matxe.CustomizableEdges = customizableEdges17;
+            cbb_matxe.DrawMode = DrawMode.OwnerDrawFixed;
+            cbb_matxe.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbb_matxe.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbb_matxe.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbb_matxe.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cbb_matxe.ForeColor = Color.FromArgb(68, 88, 112);
+            cbb_matxe.ItemHeight = 40;
+            cbb_matxe.Location = new Point(286, 239);
+            cbb_matxe.Name = "cbb_matxe";
+            cbb_matxe.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            cbb_matxe.Size = new Size(215, 46);
+            cbb_matxe.TabIndex = 7;
             // 
             // QLLuong_them_dialog
             // 
@@ -378,6 +379,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(860, 487);
             Controls.Add(cbb_nam);
+            Controls.Add(cbb_matxe);
             Controls.Add(cbb_thang);
             Controls.Add(pbx_anhtx);
             Controls.Add(btn_thoat);
@@ -392,7 +394,6 @@
             Controls.Add(tb_thuong);
             Controls.Add(tb_name);
             Controls.Add(tb_ngaycong);
-            Controls.Add(tb_matxe);
             Controls.Add(label8);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -410,7 +411,6 @@
 
         private Label label1;
         private Label label2;
-        private Guna.UI2.WinForms.Guna2TextBox tb_matxe;
         private Label label3;
         private Label label5;
         private Label label6;
@@ -428,5 +428,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbb_thang;
         private Label label9;
         private Guna.UI2.WinForms.Guna2ComboBox cbb_nam;
+        private Guna.UI2.WinForms.Guna2ComboBox cbb_matxe;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
     }
 }

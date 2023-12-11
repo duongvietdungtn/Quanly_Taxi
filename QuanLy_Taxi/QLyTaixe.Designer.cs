@@ -140,6 +140,8 @@
             // 
             // tb_searchtxe
             // 
+            tb_searchtxe.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            tb_searchtxe.BorderRadius = 6;
             tb_searchtxe.CustomizableEdges = customizableEdges9;
             tb_searchtxe.DefaultText = "";
             tb_searchtxe.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -147,15 +149,17 @@
             tb_searchtxe.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             tb_searchtxe.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tb_searchtxe.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_searchtxe.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            tb_searchtxe.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             tb_searchtxe.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_searchtxe.Location = new Point(572, 168);
+            tb_searchtxe.Location = new Point(740, 180);
+            tb_searchtxe.Margin = new Padding(4, 4, 4, 4);
             tb_searchtxe.Name = "tb_searchtxe";
             tb_searchtxe.PasswordChar = '\0';
             tb_searchtxe.PlaceholderText = "";
+            tb_searchtxe.RightToLeft = RightToLeft.Yes;
             tb_searchtxe.SelectedText = "";
             tb_searchtxe.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            tb_searchtxe.Size = new Size(200, 36);
+            tb_searchtxe.Size = new Size(224, 33);
             tb_searchtxe.TabIndex = 4;
             tb_searchtxe.TextChanged += tb_searchtxe_TextChanged;
             // 
