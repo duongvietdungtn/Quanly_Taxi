@@ -40,6 +40,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             btn_txe_them = new Guna.UI2.WinForms.Guna2Button();
             btn_txe_sua = new Guna.UI2.WinForms.Guna2Button();
@@ -47,6 +49,7 @@
             btn_txe_chitiet = new Guna.UI2.WinForms.Guna2Button();
             tb_searchtxe = new Guna.UI2.WinForms.Guna2TextBox();
             dtgrid_QLTxe = new DataGridView();
+            btn_xuatexcel = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)dtgrid_QLTxe).BeginInit();
             SuspendLayout();
             // 
@@ -197,12 +200,32 @@
             dtgrid_QLTxe.Size = new Size(940, 492);
             dtgrid_QLTxe.TabIndex = 3;
             // 
+            // btn_xuatexcel
+            // 
+            btn_xuatexcel.BorderRadius = 6;
+            btn_xuatexcel.CustomizableEdges = customizableEdges11;
+            btn_xuatexcel.DisabledState.BorderColor = Color.DarkGray;
+            btn_xuatexcel.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_xuatexcel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_xuatexcel.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_xuatexcel.FillColor = Color.FromArgb(0, 192, 0);
+            btn_xuatexcel.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_xuatexcel.ForeColor = Color.White;
+            btn_xuatexcel.Location = new Point(460, 168);
+            btn_xuatexcel.Name = "btn_xuatexcel";
+            btn_xuatexcel.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btn_xuatexcel.Size = new Size(103, 45);
+            btn_xuatexcel.TabIndex = 9;
+            btn_xuatexcel.Text = "Xuất Excel";
+            btn_xuatexcel.Click += btn_xuatexcel_Click;
+            // 
             // QLyTaixe
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(989, 745);
+            Controls.Add(btn_xuatexcel);
             Controls.Add(dtgrid_QLTxe);
             Controls.Add(tb_searchtxe);
             Controls.Add(btn_txe_chitiet);
@@ -229,5 +252,6 @@
         private DataGridViewTextBoxColumn Manv;
         private Guna.UI2.WinForms.Guna2TextBox tb_searchtxe;
         private DataGridView dtgrid_QLTxe;
+        private Guna.UI2.WinForms.Guna2Button btn_xuatexcel;
     }
 }

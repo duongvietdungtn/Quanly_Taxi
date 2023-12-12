@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Microsoft.VisualBasic.ApplicationServices;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
 
 namespace QuanLy_Taxi
 {
@@ -22,7 +24,8 @@ namespace QuanLy_Taxi
             try
             {
                 conn = new SqlConnection(strConn);
-                conn.Open(); ;
+                conn.Open();
+                OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
             }
             catch (Exception ex)
             {
@@ -324,5 +327,108 @@ namespace QuanLy_Taxi
             return newImage;
         }
 
+        private void btn_xuatexcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var package = new ExcelPackage())
+                {
+                    // Tạo một bảng tính mới
+                    var worksheet = package.Workbook.Worksheets.Add("Thông tin tài xế");
+
+                    // MergeCells từ A1 đến G1 và đặt tên bảng
+                    worksheet.Cells["A1:G1"].Merge = true;
+                    worksheet.Cells["A1"].Value = "Thông tin tài xế";
+
+                    // Định dạng tiêu đề bảng
+                    var head = worksheet.Cells["A1:G1"];
+                    head.Style.Font.Bold = true;
+                    head.Style.Font.Name = "Times New Roman";
+                    head.Style.Font.Size = 20;
+                    head.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    head.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+
+                    // Thêm tiêu đề cho các cột
+                    string[] headers = { "Mã tài xế", "Họ tên", "Ngày Sinh", "Giới tính", "Địa chỉ", "Số điện thoại", "Mã xe" };
+
+                    // Đặt độ rộng của các cột theo ý muốn của bạn
+                    int[] columnWidths = { 15, 25, 18, 15, 23, 22, 12 };
+
+                    for (int i = 0; i < headers.Length; i++)
+                    {
+                        var cell = worksheet.Cells[2, i + 1];
+                        cell.Value = headers[i];
+
+                        // Định dạng ô cột
+                        cell.Style.Font.Bold = true;
+                        cell.Style.Font.Name = "Times New Roman";
+                        cell.Style.Font.Size = 16;
+                        cell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                        cell.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+
+                        // Thêm đường kẻ viền cho ô cột
+                        cell.Style.Border.Top.Style = ExcelBorderStyle.Thin;
+                        cell.Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                        cell.Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                        cell.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+
+                        // Đặt kích thước của các cột
+                        worksheet.Column(i + 1).Width = columnWidths[i];
+                    }
+
+                    // Lấy dữ liệu từ DataGridView
+                    for (int i = 0; i < dtgrid_QLTxe.Rows.Count; i++)
+                    {
+                        // Chỉ lấy các cột cần xuất
+                        string[] rowData = {
+                    dtgrid_QLTxe.Rows[i].Cells["Matxe"].Value.ToString(),
+                    dtgrid_QLTxe.Rows[i].Cells["Hoten"].Value.ToString(),
+                    Convert.ToDateTime(dtgrid_QLTxe.Rows[i].Cells["Ngaysinh"].Value).ToShortDateString(),
+                    dtgrid_QLTxe.Rows[i].Cells["Gioitinh"].Value.ToString(),
+                    dtgrid_QLTxe.Rows[i].Cells["Diachi"].Value.ToString(),
+                    dtgrid_QLTxe.Rows[i].Cells["Sdt"].Value.ToString(),
+                    dtgrid_QLTxe.Rows[i].Cells["Maxe"].Value.ToString()
+                };
+
+                        // Ghi dữ liệu vào Excel
+                        for (int j = 0; j < rowData.Length; j++)
+                        {
+                            var cell = worksheet.Cells[i + 3, j + 1];
+                            cell.Value = rowData[j];
+
+                            // Định dạng ô dữ liệu
+                            cell.Style.Font.Name = "Times New Roman";
+                            cell.Style.Font.Size = 14;
+                            cell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                            cell.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+
+                            // Thêm đường kẻ viền cho ô dữ liệu
+                            cell.Style.Border.Top.Style = ExcelBorderStyle.Thin;
+                            cell.Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                            cell.Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                            cell.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                        }
+                    }
+
+                    // Lưu file Excel
+                    using (var saveFileDialog = new SaveFileDialog())
+                    {
+                        saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+                        saveFileDialog.FileName = "ThongTinTaiXe.xlsx";
+
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            var file = new System.IO.FileInfo(saveFileDialog.FileName);
+                            package.SaveAs(file);
+                            MessageBox.Show("Xuất Excel thành công!");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xuất Excel: " + ex.Message);
+            }
+        }
     }
 }

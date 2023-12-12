@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OfficeOpenXml.Style;
+using OfficeOpenXml;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,7 +23,8 @@ namespace QuanLy_Taxi
             try
             {
                 conn = new SqlConnection(strConn);
-                conn.Open(); ;
+                conn.Open();
+                OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
             }
             catch (Exception ex)
             {
@@ -181,7 +184,7 @@ namespace QuanLy_Taxi
             SqlDataAdapter da1;
             DataTable dt1;
             con.Open();
-            da1 = new SqlDataAdapter("SELECT Maluong, Matxe, Hoten, Thangluong, NamLuong, Songaycong, Thuong, Phat, Tongluong FROM QLLuong WHERE OR Matxe LIKE'%" + this.tb_search.Text + "%' OR Maluong LIKE '%" + this.tb_search.Text + "%'", con);
+            da1 = new SqlDataAdapter("SELECT Maluong, Matxe, Hoten, Thangluong, NamLuong, Songaycong, Thuong, Phat, Tongluong FROM QLLuong WHERE Matxe LIKE'%" + this.tb_search.Text + "%' OR Maluong LIKE '%" + this.tb_search.Text + "%'", con);
             dt1 = new DataTable();
             da1.Fill(dt1);
 
@@ -193,16 +196,16 @@ namespace QuanLy_Taxi
         {
             string connection = "SERVER=DUG_PC\\SQLEXPRESS02; Database=CSDL_QLTaxi; User Id = sa; pwd=123123";
             SqlConnection con = new SqlConnection(connection);
-            SqlDataAdapter da1;
-            DataTable dt1;
+            SqlDataAdapter da2;
+            DataTable dt2;
             con.Open();
             String locthang = cbb_locthang.SelectedItem.ToString();
             String locnam = cbb_locnam.SelectedItem.ToString();
-            da1 = new SqlDataAdapter("SELECT Maluong, Matxe, Hoten, Thangluong, NamLuong, Songaycong, Thuong, Phat, Tongluong FROM QLLuong WHERE Thangluong LIKE'%" + locthang + "%' OR Namluong LIKE'%" + locnam + "%'", con);
-            dt1 = new DataTable();
-            da1.Fill(dt1);
+            da2 = new SqlDataAdapter("SELECT Maluong, Matxe, Hoten, Thangluong, NamLuong, Songaycong, Thuong, Phat, Tongluong FROM QLLuong WHERE Thangluong LIKE'%" + locthang + "%' OR Namluong LIKE'%" + locnam + "%'", con);
+            dt2 = new DataTable();
+            da2.Fill(dt2);
 
-            dtgrid_QLLuong.DataSource = dt1;
+            dtgrid_QLLuong.DataSource = dt2;
             con.Close();
         }
 
@@ -213,7 +216,108 @@ namespace QuanLy_Taxi
 
         private void btn_xuatexcel_Click(object sender, EventArgs e)
         {
+            try
+            {
+                using (var package = new ExcelPackage())
+                {
+                    // Tạo một bảng tính mới
+                    var worksheet = package.Workbook.Worksheets.Add("Thông tin tài xế");
 
+                    // MergeCells từ A1 đến I1 và đặt tên bảng
+                    worksheet.Cells["A1:I1"].Merge = true;
+                    worksheet.Cells["A1"].Value = "Bảng lương";
+
+                    // Định dạng tiêu đề bảng
+                    var head = worksheet.Cells["A1:I1"];
+                    head.Style.Font.Bold = true;
+                    head.Style.Font.Name = "Times New Roman";
+                    head.Style.Font.Size = 20;
+                    head.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    head.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+
+                    // Thêm tiêu đề cho các cột
+                    string[] headers = { "Mã lương", "Mã tài xế", "Họ tên", "Lương tháng", "Lương năm", "Số ngày công", "Thưởng", "Phạt", "Tổng lương" };
+
+                    // Đặt độ rộng của các cột theo ý muốn của bạn
+                    int[] columnWidths = { 18, 18, 25, 21, 20, 21, 25, 25, 25 };
+
+                    for (int i = 0; i < headers.Length; i++)
+                    {
+                        var cell = worksheet.Cells[2, i + 1];
+                        cell.Value = headers[i];
+
+                        // Định dạng ô cột
+                        cell.Style.Font.Bold = true;
+                        cell.Style.Font.Name = "Times New Roman";
+                        cell.Style.Font.Size = 16;
+                        cell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                        cell.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+
+                        // Thêm đường kẻ viền cho ô cột
+                        cell.Style.Border.Top.Style = ExcelBorderStyle.Thin;
+                        cell.Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                        cell.Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                        cell.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+
+                        // Đặt kích thước của các cột
+                        worksheet.Column(i + 1).Width = columnWidths[i];
+                    }
+
+                    // Lấy dữ liệu từ Database
+                    using (SqlConnection connection = new SqlConnection("SERVER=DUG_PC\\SQLEXPRESS02; Database=CSDL_QLTaxi; User Id=sa; pwd=123123"))
+                    {
+                        connection.Open();
+
+                        using (SqlCommand command = new SqlCommand("SELECT Maluong, Matxe, Hoten, Thangluong, NamLuong, Songaycong, Thuong, Phat, Tongluong FROM QLLuong", connection))
+                        {
+                            using (SqlDataReader reader = command.ExecuteReader())
+                            {
+                                int rowIndex = 3; // Bắt đầu từ dòng 3 để bỏ qua hàng tiêu đề
+                                while (reader.Read())
+                                {
+                                    for (int i = 0; i < headers.Length; i++)
+                                    {
+                                        var cell = worksheet.Cells[rowIndex, i + 1];
+                                        cell.Value = reader[i].ToString(); // Dữ liệu từ cột tương ứng
+
+                                        // Định dạng ô dữ liệu
+                                        cell.Style.Font.Name = "Times New Roman";
+                                        cell.Style.Font.Size = 14;
+                                        cell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                                        cell.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+
+                                        // Thêm đường kẻ viền cho ô dữ liệu
+                                        cell.Style.Border.Top.Style = ExcelBorderStyle.Thin;
+                                        cell.Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                                        cell.Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                                        cell.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                                    }
+
+                                    rowIndex++;
+                                }
+                            }
+                        }
+                    }
+
+                    // Lưu file Excel
+                    using (var saveFileDialog = new SaveFileDialog())
+                    {
+                        saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+                        saveFileDialog.FileName = "Bangluong.xlsx";
+
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            var file = new System.IO.FileInfo(saveFileDialog.FileName);
+                            package.SaveAs(file);
+                            MessageBox.Show("Xuất Excel thành công!");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xuất Excel: " + ex.Message);
+            }
         }
     }
 }

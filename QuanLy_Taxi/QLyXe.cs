@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using OfficeOpenXml.Style;
+using OfficeOpenXml;
 
 namespace QuanLy_Taxi
 {
@@ -22,7 +24,8 @@ namespace QuanLy_Taxi
             try
             {
                 conn = new SqlConnection(strConn);
-                conn.Open(); ;
+                conn.Open();
+                OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
             }
             catch (Exception ex)
             {
@@ -175,6 +178,112 @@ namespace QuanLy_Taxi
 
             dtgrid_QLXe.DataSource = dt1;
             con.Close();
+        }
+
+        private void btn_xuatexcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var package = new ExcelPackage())
+                {
+                    // Tạo một bảng tính mới
+                    var worksheet = package.Workbook.Worksheets.Add("Thông tin tài xế");
+
+                    // MergeCells từ A1 đến I1 và đặt tên bảng
+                    worksheet.Cells["A1:I1"].Merge = true;
+                    worksheet.Cells["A1"].Value = "Quản lý thông tin xe";
+
+                    // Định dạng tiêu đề bảng
+                    var head = worksheet.Cells["A1:I1"];
+                    head.Style.Font.Bold = true;
+                    head.Style.Font.Name = "Times New Roman";
+                    head.Style.Font.Size = 20;
+                    head.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    head.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+
+                    // Thêm tiêu đề cho các cột
+                    string[] headers = { "Mã xe", "Biển số xe", "Hãng xe", "Tên xe", "Số ghế", "Năm sản xuất", "Số khung", "Mã tài xế", "Tên tài xế" };
+
+                    // Đặt độ rộng của các cột theo ý muốn của bạn
+                    int[] columnWidths = { 12, 25, 18, 15, 12, 21, 25, 18, 25 };
+
+                    for (int i = 0; i < headers.Length; i++)
+                    {
+                        var cell = worksheet.Cells[2, i + 1];
+                        cell.Value = headers[i];
+
+                        // Định dạng ô cột
+                        cell.Style.Font.Bold = true;
+                        cell.Style.Font.Name = "Times New Roman";
+                        cell.Style.Font.Size = 16;
+                        cell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                        cell.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+
+                        // Thêm đường kẻ viền cho ô cột
+                        cell.Style.Border.Top.Style = ExcelBorderStyle.Thin;
+                        cell.Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                        cell.Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                        cell.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+
+                        // Đặt kích thước của các cột
+                        worksheet.Column(i + 1).Width = columnWidths[i];
+                    }
+
+                    // Lấy dữ liệu từ Database
+                    using (SqlConnection connection = new SqlConnection("SERVER=DUG_PC\\SQLEXPRESS02; Database=CSDL_QLTaxi; User Id=sa; pwd=123123"))
+                    {
+                        connection.Open();
+
+                        using (SqlCommand command = new SqlCommand("SELECT Maxe, Bienxe, Hangxe, Tenxe, Soghe, Namsx, Sokhung, Matxe, Hoten FROM QLXe", connection))
+                        {
+                            using (SqlDataReader reader = command.ExecuteReader())
+                            {
+                                int rowIndex = 3; // Bắt đầu từ dòng 3 để bỏ qua hàng tiêu đề
+                                while (reader.Read())
+                                {
+                                    for (int i = 0; i < headers.Length; i++)
+                                    {
+                                        var cell = worksheet.Cells[rowIndex, i + 1];
+                                        cell.Value = reader[i].ToString(); // Dữ liệu từ cột tương ứng
+
+                                        // Định dạng ô dữ liệu
+                                        cell.Style.Font.Name = "Times New Roman";
+                                        cell.Style.Font.Size = 14;
+                                        cell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                                        cell.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+
+                                        // Thêm đường kẻ viền cho ô dữ liệu
+                                        cell.Style.Border.Top.Style = ExcelBorderStyle.Thin;
+                                        cell.Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                                        cell.Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                                        cell.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                                    }
+
+                                    rowIndex++;
+                                }
+                            }
+                        }
+                    }
+
+                    // Lưu file Excel
+                    using (var saveFileDialog = new SaveFileDialog())
+                    {
+                        saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+                        saveFileDialog.FileName = "Thongtinxe.xlsx";
+
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            var file = new System.IO.FileInfo(saveFileDialog.FileName);
+                            package.SaveAs(file);
+                            MessageBox.Show("Xuất Excel thành công!");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xuất Excel: " + ex.Message);
+            }
         }
     }
 }
